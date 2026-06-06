@@ -1,0 +1,14 @@
+services:
+  crawler-api:
+    build:
+      context: ./crawler-api
+    container_name: cagr_api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      # Se quiser editar o código e ver as mudanças em tempo real (dev mode):
+      # - ./app:/app/app
+    environment:
+      - TZ=America/Sao_Paulo
